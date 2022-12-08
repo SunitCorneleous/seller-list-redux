@@ -16,7 +16,9 @@ const Sellers = () => {
 
   return (
     <div className="max-w-[1420px] mx-auto p-5">
-      <h1 className="text-4xl text-center">Total Seller: {sellers.length}</h1>
+      <h1 className="text-4xl text-center">
+        Total Seller: {displaySeller.length}
+      </h1>
       {isLoading && (
         <div className="w-full flex justify-center min-h-[70vh] items-center my-14">
           <div role="status">
@@ -40,8 +42,6 @@ const Sellers = () => {
           </div>
         </div>
       )}
-      <button onClick={() => dispatch(filterByDay("sunday"))}>filter</button>
-      <br />
 
       <div className="form-control lg:w-2/5 mx-auto flex justify-center">
         <label className="label">
@@ -66,7 +66,7 @@ const Sellers = () => {
         displaySeller.map(seller => (
           <div
             key={seller._id}
-            className="card lg:card-side bg-base-200 my-5 shadow-xl lg:w-4/6 lg:mx-auto lg:h-[300px]"
+            className="card lg:card-side bg-base-200 my-5 shadow-xl lg:max-w-[800px] lg:mx-auto lg:h-[300px]"
           >
             <figure>
               <img
@@ -101,6 +101,8 @@ const Sellers = () => {
             </div>
           </div>
         ))}
+
+      {error && <h1 className="text-4xl text-red-600 text-center">{error}</h1>}
     </div>
   );
 };
