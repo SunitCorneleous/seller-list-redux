@@ -48,10 +48,6 @@ export const sellerSlice = createSlice({
 export const fetchSellers = createAsyncThunk(
   "sellers/fetchSellers",
   async () => {
-    //   return axios.get(SELLERS_API).then(res => {
-    //     res.data.data;
-    //   });
-
     const res = await axios.get(SELLERS_API);
     const data = await res.data.data;
     return data;
