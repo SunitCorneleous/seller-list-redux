@@ -27,7 +27,8 @@ export const sellerSlice = createSlice({
 
     // error
     builder.addCase(fetchSellers.rejected, state => {
-      (state.isLoading = false), (state.error = "Something went wrong");
+      state.isLoading = false;
+      state.error = "Something went wrong";
     });
   },
   reducers: {

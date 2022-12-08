@@ -1,11 +1,10 @@
-import { list } from "postcss";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterByDay } from "../store";
 import { fetchSellers } from "../store/sellersSlice";
 
 const Sellers = () => {
-  const { sellers, isLoading, error, displaySeller } = useSelector(
+  const { isLoading, error, displaySeller } = useSelector(
     state => state.sellers
   );
   const dispatch = useDispatch();
@@ -43,11 +42,9 @@ const Sellers = () => {
         </div>
       )}
 
-      <div className="form-control lg:w-2/5 mx-auto flex justify-center">
+      <div className="form-control lg:w-2/5 mx-auto flex justify-center my-4">
         <label className="label">
-          <span className="label-text-alt text-base">
-            Filter by availability
-          </span>
+          <span className="label-text-alt text-lg">Filter by availability</span>
         </label>
         <select
           className="select select-bordered w-full"
